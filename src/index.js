@@ -6,6 +6,7 @@ import About from "./Layouts/About";
 import Users from "./Layouts/Users";
 import Header from "./Layouts/Header";
 import Footer from "./Layouts/Footer";
+import TodoList from "./Layouts/TodoList";
 import { Container } from "semantic-ui-react";
 import Login from "./Layouts/Login";
 
@@ -18,6 +19,7 @@ const Routers = () => {
           <Route exact path="/" component={Home} />
           <Route exact path="/about" component={About} />
           <Route exact path="/users" component={Users} />
+          <Route exact path="/todos" component={TodoList} />
           <Route exact path="/login" component={Login} />
         </Switch>
       </Router>

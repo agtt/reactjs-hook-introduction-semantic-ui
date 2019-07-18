@@ -33,6 +33,13 @@ export default class MenuEx extends Component {
           as={Link}
           to="users"
         />
+        <Menu.Item
+          name="todos"
+          active={activeItem === "todos"}
+          onClick={this.handleItemClick}
+          as={Link}
+          to="todos"
+        />
         <Menu.Menu position="right">
           <Menu.Item>
             <Input icon="search" placeholder="Search..." />
