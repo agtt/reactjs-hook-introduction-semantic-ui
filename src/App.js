@@ -10,7 +10,7 @@ function App() {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    const testfunc = a => {
+    const testfunc = () => {
       console.log("Use Effect Test");
     };
     testfunc();
