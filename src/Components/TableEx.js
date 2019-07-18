@@ -15,7 +15,7 @@ const TableEx = props => {
       <Table.Body>
         {props.userList.map(item => {
           return (
-            <Table.Row>
+            <Table.Row key={item.id}>
               <Table.Cell>{item.name}</Table.Cell>
               <Table.Cell>{item.email}</Table.Cell>
               <Table.Cell textAlign="right">{item.website}</Table.Cell>
