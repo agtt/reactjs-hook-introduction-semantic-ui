@@ -6,8 +6,10 @@ const TodoList = () => {
 
   return (
     <div>
-      <Input />
+      <Input placeholder="You Text" />
       <Button onClick={() => addTodo([...todos, "Item Name"])}>Add Todo</Button>
+      <Button onClick={() => addTodo([])}>Reset</Button>
+
       <List divided verticalAlign="middle">
         {todos.map(todo => {
           return (
