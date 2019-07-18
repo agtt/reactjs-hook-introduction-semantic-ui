@@ -10,8 +10,11 @@ function App() {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    console.log("Triggered");
-  });
+    const testfunc = a => {
+      console.log("Use Effect Test");
+    };
+    testfunc();
+  }, []);
 
   return (
     <div className="App">

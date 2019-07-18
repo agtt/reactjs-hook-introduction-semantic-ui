@@ -1,8 +1,12 @@
 {
   "name": "reactjs-hooks-introduction",
   "version": "1.0.0",
-  "description": "",
-  "keywords": [],
+  "description": null,
+  "keywords": [
+    "reactjs",
+    "semantic ui",
+    "react hook"
+  ],
   "main": "src/index.js",
   "dependencies": {
     "axios": "0.19.0",
