@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import { Input, Button, Header } from "semantic-ui-react";
 //import { useSelector, useDispatch } from 'react-redux'
 
-import "./styles.css";
+import "../styles.css";
 
-function App() {
+function Home() {
   const [name, setName] = useState("");
   const [text, setText] = useState("");
   const [count, setCount] = useState(0);
@@ -41,4 +41,4 @@ function App() {
   );
 }
 
-export default App;
+export default Home;

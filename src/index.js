@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import App from "./App";
+import Home from "./Layouts/Home";
 import About from "./Layouts/About";
 import Users from "./Layouts/Users";
 import Header from "./Layouts/Header";
@@ -15,7 +15,7 @@ const Routers = () => {
       <Router>
         <Header />
         <Switch>
-          <Route exact path="/" component={App} />
+          <Route exact path="/" component={Home} />
           <Route exact path="/about" component={About} />
           <Route exact path="/users" component={Users} />
           <Route exact path="/login" component={Login} />

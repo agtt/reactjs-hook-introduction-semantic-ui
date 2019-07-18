@@ -10,6 +10,7 @@ const Users = () => {
         "https://jsonplaceholder.typicode.com/users"
       );
       setUserList(response.data);
+      console.log("Use Effect - User Component");
     }
     fetchUser();
   }, []);
