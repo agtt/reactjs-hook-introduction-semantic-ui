@@ -1,5 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
+import { createStore } from "redux";
+import Reducers from "./Redux/Reducers";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./Layouts/Home";
 import About from "./Layouts/About";
@@ -10,21 +13,25 @@ import TodoList from "./Layouts/TodoList";
 import { Container } from "semantic-ui-react";
 import Login from "./Layouts/Login";
 
+const store = createStore(Reducers);
+
 const Routers = () => {
   return (
-    <Container style={{ margin: 20 }}>
-      <Router>
-        <Header />
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/about" component={About} />
-          <Route exact path="/users" component={Users} />
-          <Route exact path="/todos" component={TodoList} />
-          <Route exact path="/login" component={Login} />
-        </Switch>
-      </Router>
-      <Footer />
-    </Container>
+    <Provider store={store}>
+      <Container style={{ margin: 20 }}>
+        <Router>
+          <Header />
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/about" component={About} />
+            <Route exact path="/users" component={Users} />
+            <Route exact path="/todos" component={TodoList} />
+            <Route exact path="/login" component={Login} />
+          </Switch>
+        </Router>
+        <Footer />
+      </Container>
+    </Provider>
   );
 };
 
