@@ -17,7 +17,7 @@ const TodoList = () => {
       <Button onClick={() => dispatch({ type: "ADD_TODO", text: todo })}>
         Add Todo
       </Button>
-      <Button onClick={() => setTodo([])}>Reset</Button>
+      <Button onClick={() => dispatch({ type: "RESET_TODO" })}>Reset</Button>
 
       <List divided verticalAlign="middle">
         {todos.map(todo => {
