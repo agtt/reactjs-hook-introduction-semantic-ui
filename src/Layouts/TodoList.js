@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { Image, List, Input, Button } from "semantic-ui-react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 const TodoList = () => {
   const [todo, setTodo] = useState(["Fenebahce"]);
-  const todos = [];
+  const todos = useSelector(state => state.todoReducers);
   const dispatch = useDispatch();
 
   const onChange = e => {
@@ -22,13 +22,13 @@ const TodoList = () => {
       <List divided verticalAlign="middle">
         {todos.map(todo => {
           return (
-            <List.Item>
+            <List.Item key={todo.id}>
               <Image
                 avatar
                 src="http://1.bp.blogspot.com/-clk_4IRJASs/Tt5NK2e7qcI/AAAAAAAAANk/c1zkUcv_FHk/s1600/fenerbahce_logosu.png"
               />
               <List.Content>
-                <List.Header as="a">{todo}</List.Header>
+                <List.Header as="a">{todo.text}</List.Header>
               </List.Content>
             </List.Item>
           );
