@@ -30,6 +30,11 @@ const TodoList = () => {
               <List.Content>
                 <List.Header as="a">{todo.text}</List.Header>
               </List.Content>
+              <Button
+                onClick={todo => dispatch({ type: "DEL_TODO", id: todo.id })}
+              >
+                x
+              </Button>
             </List.Item>
           );
         })}
