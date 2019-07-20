@@ -1,20 +1,21 @@
-export default function(state = [], action) {
-  const { type, text, todo } = action;
-
-  switch (type) {
+const todos = (state = [], action) => {
+  switch (action.type) {
     case "ADD_TODO":
       return [
         ...state,
         {
-          id: Math.random()
-            .toString(36)
-            .substring(2),
-          text
+          id: action.id,
+          text: action.text,
+          completed: false
         }
       ];
-    case "REMOVE_TODO":
-      return state.filter(i => i !== todo);
+    case "TOGGLE_TODO":
+      return state.map(todo =>
+        todo.id === action.id ? { ...todo, completed: !todo.completed } : todo
+      );
     default:
       return state;
   }
-}
+};
+
+export default todos;
