@@ -31,7 +31,7 @@ const TodoList = () => {
                 <List.Header as="a">{todo.text}</List.Header>
               </List.Content>
               <Button
-                onClick={todo => dispatch({ type: "DEL_TODO", id: todo.id })}
+                onClick={() => dispatch({ type: "DEL_TODO", id: todo.id })}
               >
                 x
               </Button>

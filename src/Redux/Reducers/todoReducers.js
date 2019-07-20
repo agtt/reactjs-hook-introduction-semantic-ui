@@ -1,10 +1,11 @@
+import uuidv4 from "uuid/v4";
 const todos = (state = [], action) => {
   switch (action.type) {
     case "ADD_TODO":
       return [
         ...state,
         {
-          id: action.id,
+          id: uuidv4(),
           text: action.text,
           completed: false
         }
@@ -15,6 +16,7 @@ const todos = (state = [], action) => {
       );
 
     case "DEL_TODO":
+      console.log(action);
       return state.filter(todo => todo.id !== action.id);
     default:
       return state;
