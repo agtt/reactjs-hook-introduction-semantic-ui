@@ -1,16 +1,24 @@
 import React, { useState } from "react";
 import { Image, List, Input, Button } from "semantic-ui-react";
-import { connect } from "react-redux";
-import todoActions from "../Redux/Actions/todoActions";
+import { addTodoAct } from "../Redux/Actions/todoActions";
+import { useDispatch } from "react-redux";
 
 const TodoList = () => {
-  const [todos, addTodo] = useState(["Fenebahce"]);
+  const [todo, setTodo] = useState(["Fenebahce"]);
+  const todos = [];
+  const dispatch = useDispatch();
+
+  const onChange = e => {
+    setTodo(e.target.value);
+  };
 
   return (
     <div>
-      <Input placeholder="You Text" />
-      <Button onClick={() => addTodo([...todos, "Item Name"])}>Add Todo</Button>
-      <Button onClick={() => addTodo([])}>Reset</Button>
+      <Input onChange={onChange} placeholder="You Text" />
+      <Button onClick={() => dispatch({ type: "ADD_TODO", text: todo })}>
+        Add Todo
+      </Button>
+      <Button onClick={() => setTodo([])}>Reset</Button>
 
       <List divided verticalAlign="middle">
         {todos.map(todo => {

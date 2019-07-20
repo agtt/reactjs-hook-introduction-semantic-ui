@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import { createStore /*, applyMiddleware*/ } from "redux";
-import thunk from "redux-thunk";
+//import thunk from "redux-thunk";
 import Reducers from "./Redux/Reducers";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./Layouts/Home";
