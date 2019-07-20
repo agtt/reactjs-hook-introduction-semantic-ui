@@ -3,7 +3,7 @@ import { Image, List, Input, Button } from "semantic-ui-react";
 import { useDispatch, useSelector } from "react-redux";
 
 const TodoList = () => {
-  const [todo, setTodo] = useState(["Fenebahce"]);
+  const [todo, setTodo] = useState("");
   const todos = useSelector(state => state.todoReducers);
   const dispatch = useDispatch();
 
