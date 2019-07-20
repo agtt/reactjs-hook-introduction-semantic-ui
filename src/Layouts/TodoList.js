@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Image, List, Input, Button } from "semantic-ui-react";
-import { addTodoAct } from "../Redux/Actions/todoActions";
 import { useDispatch } from "react-redux";
 
 const TodoList = () => {
