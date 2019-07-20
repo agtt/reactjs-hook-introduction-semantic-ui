@@ -15,29 +15,27 @@ import { Container } from "semantic-ui-react";
 import Login from "./Layouts/Login";
 
 const store = createStore(Reducers, applyMiddleware(thunk));
+console.log(store.getState());
 
-const Routers = () => {
+const App = () => {
   return (
-    <Container style={{ margin: 20 }}>
-      <Router>
-        <Header />
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/about" component={About} />
-          <Route exact path="/users" component={Users} />
-          <Route exact path="/todos" component={TodoList} />
-          <Route exact path="/login" component={Login} />
-        </Switch>
-      </Router>
-      <Footer />
-    </Container>
+    <Provider store={store}>
+      <Container style={{ margin: 20 }}>
+        <Router>
+          <Header />
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/about" component={About} />
+            <Route exact path="/users" component={Users} />
+            <Route exact path="/todos" component={TodoList} />
+            <Route exact path="/login" component={Login} />
+          </Switch>
+        </Router>
+        <Footer />
+      </Container>
+    </Provider>
   );
 };
 
 const rootElement = document.getElementById("root");
-ReactDOM.render(
-  <Provider store={store}>
-    <Routers />
-  </Provider>,
-  rootElement
-);
+ReactDOM.render(<App />, rootElement);

@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Image, List, Input, Button } from "semantic-ui-react";
+import { connect } from "react-redux";
+import todoActions from "../Redux/Actions/todoActions";
 
 const TodoList = () => {
   const [todos, addTodo] = useState(["Fenebahce"]);
